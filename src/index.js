@@ -1,5 +1,5 @@
 import './styles.css';
-import slideshow from './modules/slide';
+import slideshow from './modules/slideshow';
 function importAll(r) {
   r.keys().forEach(r);
 }
