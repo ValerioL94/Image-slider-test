@@ -5,4 +5,5 @@ function importAll(r) {
 }
 importAll(require.context('/src/images', false, /\.(png|svg|jpg|jpeg|gif)$/));
 
-slideshow.displaySlides(1);
+slideshow.displaySlides();
+setInterval(slideshow.autoDisplay, 5000);

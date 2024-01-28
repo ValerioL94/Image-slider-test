@@ -113,6 +113,11 @@ main {
   align-items: center;
   justify-content: center;
   max-height: 100px;
+  transition: 1s;
+  font-size: 1rem;
+}
+
+.text {
   font-size: 3rem;
 }
 

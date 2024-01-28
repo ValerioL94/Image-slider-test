@@ -48,9 +48,12 @@ const slideshow = (() => {
     slideDots[slideIndex - 1].classList.add('selected');
     slidesText[slideIndex - 1].style.display = 'block';
   }
-
+  function autoDisplay() {
+    plusSlides(1);
+  }
   return {
     displaySlides,
+    autoDisplay,
   };
 })();
 
