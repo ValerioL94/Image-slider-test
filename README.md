@@ -1,4 +1,4 @@
-# <a hrfer="https://valeriol94.github.io/Image-slider-test/">Image-slider-test </a>
+# <a href="https://valeriol94.github.io/Image-slider-test/">Image-slider-test </a>
 
 -Arrows from: https://icons8.com/
 
