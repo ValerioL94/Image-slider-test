@@ -5,4 +5,4 @@ function importAll(r) {
 }
 importAll(require.context('/src/images', false, /\.(png|svg|jpg|jpeg|gif)$/));
 
-slideshow.selectBtn();
+slideshow.displaySlides(1);

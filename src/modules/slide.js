@@ -1,65 +1,56 @@
 const slideshow = (() => {
-  const slideButtons = document.querySelectorAll('.slideBtn');
-  function selectBtn() {
-    slideButtons.forEach((btn) =>
-      btn.addEventListener('click', () => {
-        const selectedEL = document.querySelector('.selected');
-        if (selectedEL) selectedEL.classList.remove('selected');
-        btn.classList.add('selected');
-      })
-    );
-  }
+  const slides = document.querySelectorAll('.slide');
+  const slideDots = document.querySelectorAll('.slideBtn');
+  const slidesText = document.querySelectorAll('.text');
+  const prev = document.getElementById('leftArrow');
+  const next = document.getElementById('rightArrow');
 
-  const slides = [
-    {
-      title: 'Lion',
-      source: 'images/lion.jpg',
-      alt: 'photo of a lion',
-    },
-    {
-      title: 'Giraffe',
-      source: 'images/giraffe.jpg',
-      alt: 'photo of a giraffe',
-    },
-    {
-      title: 'Deer',
-      source: 'images/deer.jpg',
-      alt: 'photo of a deer',
-    },
-    {
-      title: 'tiger',
-      source: 'images/tiger.jpg',
-      alt: 'photo of a tiger',
-    },
-    {
-      title: 'toucan',
-      source: 'images/toucan.jpg',
-      alt: 'photo of a toucan',
-    },
-  ];
+  let slideIndex = 1;
 
-  function displaySlide(slide) {
-    const frame = document.getElementById('imageFrame');
-    const title = document.getElementById('imageTitle');
-    const p = document.createElement('p');
-    p.textContent = slide.title;
-    const image = document.createElement('img');
-    image.src = slide.source;
-    image.alt = slide.alt;
-    frame.appendChild(image);
-    title.appendChild(p);
-  }
-
-  const dotsWrapper = document.querySelector('dotsWrapper');
-  dotsWrapper.addEventListener('click', (event) => {
-    const btn = event.target.closest('.slideBtn');
-    if (btn) {
-      displaySlide(slides[0]);
-    }
+  prev.addEventListener('click', () => {
+    plusSlides(-1);
   });
+  next.addEventListener('click', () => {
+    plusSlides(1);
+  });
+  function plusSlides(n) {
+    displaySlides((slideIndex += n));
+  }
+
+  for (let i = 0; i < slideDots.length; i++) {
+    slideDots[i].addEventListener('click', () => {
+      currentSlide(i + 1);
+    });
+  }
+
+  function currentSlide(n) {
+    displaySlides((slideIndex = n));
+  }
+
+  function displaySlides(n) {
+    let i;
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = 'none';
+    }
+    for (i = 0; i < slideDots.length; i++) {
+      slideDots[i].classList.remove('selected');
+    }
+    for (i = 0; i < slidesText.length; i++) {
+      slidesText[i].style.display = 'none';
+    }
+    slides[slideIndex - 1].style.display = 'block';
+    slideDots[slideIndex - 1].classList.add('selected');
+    slidesText[slideIndex - 1].style.display = 'block';
+  }
+
   return {
-    selectBtn,
-    displaySlide,
+    displaySlides,
   };
 })();
 

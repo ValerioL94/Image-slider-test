@@ -12,32 +12,62 @@
       </header>
       <main>
         <div class="container">
+          <button id="leftArrow" class="arrowBtn">
+            <img
+              class="arrow"
+              src="images/arrow-left.png"
+              alt="arrow pointing left"
+            />
+          </button>
+          <button id="rightArrow" class="arrowBtn">
+            <img
+              class="arrow"
+              src="images/arrow-right.png"
+              alt="arrow pointing right"
+            />
+          </button>
           <div class="imageWrapper">
-            <button id="leftArrow" class="arrowBtn">
+            <div class="slide fade">
+              <img class="photo" src="images/lion.jpg" alt="photo of a lion" />
+            </div>
+            <div class="slide fade">
               <img
-                class="arrow"
-                src="images/arrow-left.png"
-                alt="arrow pointing left"
+                class="photo"
+                src="images/giraffe.jpg"
+                alt="photo of a giraffe"
               />
-            </button>
-            <div id="imageFrame"></div>
-            <button id="RightArrow" class="arrowBtn">
+            </div>
+            <div class="slide fade">
+              <img class="photo" src="images/deer.jpg" alt="photo of a deer" />
+            </div>
+            <div class="slide fade">
               <img
-                class="arrow"
-                src="images/arrow-right.png"
-                alt="arrow pointing right"
+                class="photo"
+                src="images/tiger.jpg"
+                alt="photo of a tiger"
               />
-            </button>
+            </div>
+            <div class="slide fade">
+              <img
+                class="photo"
+                src="images/toucan.jpg"
+                alt="photo of a toucan"
+              />
+            </div>
           </div>
           <div class="dotsWrapper">
-            <button class="slideBtn" id="deer"></button>
-            <button class="slideBtn" id="giraffe"></button>
-            <button class="slideBtn" id="lion"></button>
-            <button class="slideBtn" id="toucan"></button>
-            <button class="slideBtn" id="tiger"></button>
+            <button class="slideBtn"></button>
+            <button class="slideBtn"></button>
+            <button class="slideBtn"></button>
+            <button class="slideBtn"></button>
+            <button class="slideBtn"></button>
           </div>
           <div id="imageTitle">
-            <p></p>
+            <p class="text">Lion</p>
+            <p class="text">Giraffe</p>
+            <p class="text">Deer</p>
+            <p class="text">Tiger</p>
+            <p class="text">Toucan</p>
           </div>
         </div>
       </main>
