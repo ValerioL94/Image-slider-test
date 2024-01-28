@@ -3,4 +3,94 @@ body {
   border: 0;
   margin: 0;
   padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#content {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 80px 1fr 50px;
+}
+header {
+  text-align: center;
+  background-color: #528e52;
+  border-bottom: 2px solid;
+}
+
+main {
+  background-color: lightgrey;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  height: 100%;
+  max-width: 500px;
+  background-color: white;
+  display: grid;
+  grid-template-rows: 640px auto;
+}
+
+.imageWrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#imageFrame > img {
+  height: 600px;
+  max-width: 400px;
+  border: 2px solid;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.arrowBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+.arrow {
+  width: 30px;
+}
+.arrowBtn:hover {
+  transform: scale(1.2);
+}
+.dotsWrapper {
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  width: fit-content;
+  margin: auto;
+}
+.dotsWrapper > button {
+  cursor: pointer;
+  height: 15px;
+  border-radius: 100%;
+  transition: 0.5s;
+}
+.dotsWrapper > button:hover {
+  background-color: grey;
+}
+.selected {
+  background-color: grey;
+}
+
+.imageTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 100px;
+  font-size: 3rem;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #528e52;
+  border-top: 2px solid;
+}
+.github {
+  height: 20px;
 }
